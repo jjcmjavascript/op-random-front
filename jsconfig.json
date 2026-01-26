@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@hooks/*": ["src/app/shared/hooks/*"],
+      "@services/*": ["src/app/shared/services/*"],
+      "@helpers/*": ["src/app/shared/helpers/*"],
+      "@types/*": ["src/app/shared/types/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

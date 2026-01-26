@@ -1,0 +1,73 @@
+export const CARD_COLORS = {
+  RED: "Red",
+  BLUE: "Blue",
+  GREEN: "Green",
+  PURPLE: "Purple",
+  BLACK: "Black",
+  YELLOW: "Yellow",
+};
+
+export const CARD_TYPES = {
+  CHARACTER: "Character",
+  EVENT: "Event",
+  STAGE: "Stage",
+  LEADER: "Leader",
+};
+
+export const EXPANSIONS = [
+  "EB01",
+  "EB02",
+  "EB03",
+  "EB04",
+  "OP01",
+  "OP02",
+  "OP03",
+  "OP04",
+  "OP05",
+  "OP06",
+  "OP07",
+  "OP08",
+  "OP09",
+  "OP10",
+  "OP11",
+  "OP12",
+  "OP13",
+  "OP14",
+  "promo",
+  "PRB01",
+  "PRB02",
+  "ST01",
+  "ST02",
+  "ST03",
+  "ST04",
+  "ST05",
+  "ST06",
+  "ST07",
+  "ST08",
+  "ST09",
+  "ST10",
+  "ST11",
+  "ST12",
+  "ST13",
+  "ST14",
+  "ST15",
+  "ST16",
+  "ST17",
+  "ST18",
+  "ST19",
+  "ST20",
+  "ST21",
+  "ST22",
+  "ST23",
+  "ST24",
+  "ST25",
+  "ST26",
+  "ST27",
+  "ST28",
+  "ST29",
+];
+
+export const MAX_DECK_SIZE = 50;
+export const MAX_CARD_COPIES = 4;
+export const MIN_COST = 0;
+export const MAX_COST = 10;
