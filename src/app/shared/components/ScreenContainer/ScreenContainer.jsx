@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 const ScreenContainer = ({ className = "", sx, children }) => {
   return (
     <Box
-      component="section"
+      component="main"
       className={className}
       sx={{
         minHeight: "100vh",

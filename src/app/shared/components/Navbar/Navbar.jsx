@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useNavigate } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 const pages = [
   { name: "Inicio", path: "/" },
@@ -119,8 +119,11 @@ const Navbar = () => {
               {pages.map((page) => (
                 <MenuItem
                   key={page.name}
-                  onClick={() => (page.path ? handleNavigate(page.path) : null)}
+                  component={RouterLink}
+                  to={page.path}
+                  onClick={handleCloseNavMenu}
                   sx={{
+                    textDecoration: "none",
                     "&:hover": {
                       background: "rgba(244, 197, 66, 0.1)",
                     },
@@ -226,12 +229,14 @@ const Navbar = () => {
               ) : (
                 <Button
                   key={page.name}
-                  onClick={() => handleNavigate(page.path)}
+                  component={RouterLink}
+                  to={page.path}
                   sx={{
                     my: 2,
                     color: "#f7f1e1",
                     display: "block",
                     fontWeight: 600,
+                    textDecoration: "none",
                     "&:hover": {
                       color: "var(--op-gold)",
                       background: "rgba(244, 197, 66, 0.1)",

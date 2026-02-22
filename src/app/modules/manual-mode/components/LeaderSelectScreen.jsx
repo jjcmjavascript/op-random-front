@@ -34,6 +34,7 @@ const LeaderSelectScreen = () => {
 
       <Box sx={{ maxWidth: 1400, mx: "auto" }}>
         <Typography
+          component="h1"
           onClick={handleBackToHome}
           sx={{
             fontSize: { xs: "2.5rem", md: "3.5rem" },

@@ -57,6 +57,7 @@ const RandomDeckScreen = () => {
 
       <Box sx={{ width: "100%", mx: "auto", maxWidth: "90vw" }}>
         <Typography
+          component="h1"
           sx={{
             fontSize: { xs: "2rem", sm: "2.5rem", md: "3.5rem" },
             textAlign: "center",

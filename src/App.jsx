@@ -12,11 +12,13 @@ import ManualModeLayout from "@modules/manual-mode/ManualModeLayout";
 import RandomDeckScreen from "@modules/random-deck/RandomDeckScreen";
 import RankingScreen from "@modules/ranking/RankingScreen";
 import TierListLeadersScreen from "@modules/tier-list/TierListLeadersScreen";
+import SeoManager from "@shared/seo/SeoManager";
 
 function App() {
   return (
     <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <Navbar />
+      <SeoManager />
       <Routes>
         <Route path="/" element={<ConfigScreen />} />
         <Route path="/ranking" element={<RankingScreen />} />

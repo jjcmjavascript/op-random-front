@@ -38,6 +38,8 @@ const LeaderCard = ({ card, isDragging = false }) => {
         component="img"
         src={card.imgUrl}
         alt={card.name}
+        loading="lazy"
+        decoding="async"
         sx={{
           width: "100%",
           height: "100%",

@@ -62,6 +62,7 @@ const DeckViewScreen = () => {
     <ScreenContainer>
       <Box sx={{ maxWidth: 1600, mx: "auto" }}>
         <Typography
+          component="h1"
           onClick={handleNewDeck}
           sx={{
             fontSize: { xs: "2.1rem", sm: "2.5rem", md: "3.5rem" },

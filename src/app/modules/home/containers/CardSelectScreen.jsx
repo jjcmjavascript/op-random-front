@@ -154,6 +154,7 @@ const CardSelectScreen = () => {
               </Box>
             )}
             <Typography
+              component="h1"
               sx={{
                 fontSize: { xs: "2rem", md: "3rem" },
                 color: "var(--op-red)",

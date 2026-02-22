@@ -27,6 +27,23 @@ const ConfigScreen = () => {
       }}
     >
       <Box sx={{ maxWidth: 1200, mx: "auto", position: "relative", zIndex: 1 }}>
+        <Typography
+          component="h1"
+          sx={{
+            position: "absolute",
+            width: 1,
+            height: 1,
+            p: 0,
+            m: -1,
+            overflow: "hidden",
+            clip: "rect(0 0 0 0)",
+            whiteSpace: "nowrap",
+            border: 0,
+          }}
+        >
+          One Piece TCG Builder
+        </Typography>
+
         <ErrorBanner message={error} onClose={clearError} />
 
         {isLoading ? (

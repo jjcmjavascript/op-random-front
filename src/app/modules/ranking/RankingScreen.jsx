@@ -54,6 +54,7 @@ const RankingScreen = () => {
       <Box sx={{ maxWidth: 1200, mx: "auto", px: { xs: 2, md: 3 } }}>
         <Box sx={{ textAlign: "center", mb: 4 }}>
           <Typography
+            component="h1"
             sx={{
               fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
               color: "#fff",
@@ -198,6 +199,8 @@ const RankingScreen = () => {
                           component="img"
                           src={leader.imgUrl}
                           alt={leader.leaderName}
+                          loading="lazy"
+                          decoding="async"
                           sx={{
                             width: 70,
                             height: 100,

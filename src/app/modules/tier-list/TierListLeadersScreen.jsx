@@ -167,6 +167,7 @@ const TierListLeadersScreen = () => {
         >
           <Typography
             variant="h3"
+            component="h1"
             sx={{ color: "#fff", fontFamily: '"Bangers", cursive' }}
           >
             TIER LIST - LÍDERES
