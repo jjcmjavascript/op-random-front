@@ -88,6 +88,28 @@ const ConfigScreen = () => {
             </Box>
 
             <Box sx={{ flex: 1, minWidth: 0, minHeight: "60vh" }}>
+              <Box
+                component="a"
+                href="https://perfumesvip.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  position: "relative",
+                  display: "block",
+                  width: "100%",
+                  height: 100,
+                  mb: 2,
+                  borderRadius: 2,
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  backgroundImage:
+                    "url('https://cdn.jsdelivr.net/gh/itsnotjs-creator/portafolio-images/perfumesvip.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                }}
+              ></Box>
+
               <ModeSelector />
             </Box>
           </Box>
