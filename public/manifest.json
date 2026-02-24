@@ -1,0 +1,52 @@
+{
+  "name": "One Piece TCG Builder",
+  "short_name": "OP TCG Builder",
+  "description": "Generador de mazos, ranking oficial y tier list para One Piece Trading Card Game",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1a33",
+  "theme_color": "#0b1a33",
+  "orientation": "portrait-primary",
+  "categories": ["games", "utilities"],
+  "lang": "es",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Ranking de Líderes",
+      "short_name": "Ranking",
+      "description": "Ver ranking oficial de líderes",
+      "url": "/ranking",
+      "icons": []
+    },
+    {
+      "name": "Modo Manual",
+      "short_name": "Manual",
+      "description": "Construir mazo carta por carta",
+      "url": "/manual-mode",
+      "icons": []
+    },
+    {
+      "name": "Generador Aleatorio",
+      "short_name": "Aleatorio",
+      "description": "Generar mazo aleatorio",
+      "url": "/random-deck",
+      "icons": []
+    },
+    {
+      "name": "Tier List",
+      "short_name": "Tier List",
+      "description": "Crear tier list de líderes",
+      "url": "/tier-list/leaders",
+      "icons": []
+    }
+  ]
+}

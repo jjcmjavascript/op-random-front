@@ -10,11 +10,17 @@ const META_DEFINITIONS = [
   { key: "og:description", attr: "property", value: "og:description" },
   { key: "og:url", attr: "property", value: "og:url" },
   { key: "og:image", attr: "property", value: "og:image" },
+  { key: "og:image:width", attr: "property", value: "og:image:width" },
+  { key: "og:image:height", attr: "property", value: "og:image:height" },
+  { key: "og:image:alt", attr: "property", value: "og:image:alt" },
   { key: "og:locale", attr: "property", value: "og:locale" },
+  { key: "og:site_name", attr: "property", value: "og:site_name" },
   { key: "twitter:card", attr: "name", value: "twitter:card" },
   { key: "twitter:title", attr: "name", value: "twitter:title" },
   { key: "twitter:description", attr: "name", value: "twitter:description" },
   { key: "twitter:image", attr: "name", value: "twitter:image" },
+  { key: "twitter:image:alt", attr: "name", value: "twitter:image:alt" },
+  { key: "twitter:creator", attr: "name", value: "twitter:creator" },
   { key: "robots", attr: "name", value: "robots" },
 ];
 
@@ -72,12 +78,19 @@ const SeoManager = () => {
       "og:description": seo.description,
       "og:url": canonicalUrl,
       "og:image": imageUrl,
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": seo.title,
       "og:locale": seo.locale,
+      "og:site_name": seo.siteName,
       "twitter:card": "summary_large_image",
       "twitter:title": seo.title,
       "twitter:description": seo.description,
       "twitter:image": imageUrl,
-      robots: "index, follow",
+      "twitter:image:alt": seo.title,
+      "twitter:creator": seo.twitterCreator || "@itsnotjs",
+      robots:
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     };
 
     META_DEFINITIONS.forEach(({ key, attr, value }) => {
@@ -86,7 +99,8 @@ const SeoManager = () => {
 
     upsertCanonical(canonicalUrl);
 
-    upsertJsonLd({
+    // Structured Data más completo
+    const structuredData = {
       "@context": "https://schema.org",
       "@type": seo.structuredDataType,
       name: seo.siteName,
@@ -94,13 +108,39 @@ const SeoManager = () => {
       description: seo.description,
       inLanguage: "es",
       url: canonicalUrl,
-      image: imageUrl,
+      image: {
+        "@type": "ImageObject",
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+      },
       isPartOf: {
         "@type": "WebSite",
         name: seo.siteName,
         url: origin,
+        description:
+          "Herramienta completa para One Piece Trading Card Game: generador de mazos, ranking oficial y tier list",
+        inLanguage: "es",
       },
-    });
+      author: {
+        "@type": "Person",
+        name: "itsnotjs",
+      },
+      keywords: seo.keywords,
+    };
+
+    // Agregar información específica según el tipo de página
+    if (seo.structuredDataType === "WebApplication") {
+      structuredData.applicationCategory = "GameApplication";
+      structuredData.operatingSystem = "Web Browser";
+      structuredData.offers = {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      };
+    }
+
+    upsertJsonLd(structuredData);
   }, [location.pathname]);
 
   return null;
